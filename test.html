@@ -1,10 +1,10 @@
 <DOCTYPE= HTML>
 <head>
     <script>
-        function getData(name_number){
+        function getData(){
             var url = "https://pokeapi.co/api/v2/pokemon/";
-            var id = 3;
-            // id = name_number
+            var input = document.getElementById("id");
+            var id = input.value;
             var request = url+String(id);
             fetch(request)
             .then(function(data){
@@ -27,5 +27,7 @@
     </script>
 </head>
 <body onload="getData();">
+    <input id="id" type="number" placeholder="全国図鑑番号を入れてね" value="1">
+    <button onclick="getData()">ポケモンの画像をかえる</button>
     <img src="default.png" id="poke">
 </body>
